@@ -19,9 +19,10 @@ const userSchema = new mongoose.Schema(
     userType: {
       type: String,
       enum: ["passenger", "driver", "operator"],
+      default: "passenger",
       required: true,
     },
-    phoneNumber: { type: String },
+    phone: { type: String },
     avatar: {
       type: String,
       default:

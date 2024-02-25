@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv/config";
 import cookieParser from "cookie-parser"
 import userRoutes from "./routes/user.route.js";
+import authRoutes from "./routes/auth.route.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,6 +26,7 @@ mongoose
 
 /* ROUTES */
 app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
 
 /* ERROR MIDDLEWARE */
 app.use((err, req, res, next) => {
